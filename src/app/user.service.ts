@@ -35,4 +35,8 @@ export class UserService {
     return this.http.put<User>(this.url, user, httpOptions);
   }
 
+  deleteUser (id: string): Observable<User> {
+    return this.http.get<User>(`${this.url}/${id}`);
+  }
+
 }

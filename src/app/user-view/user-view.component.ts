@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute , Router} from '@angular/router';
 
 import { UserService } from '../user.service';
 import { User } from '../user';
@@ -15,6 +15,7 @@ export class UserViewComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router : Router,
     private userService: UserService
   ) { }
 
@@ -29,5 +30,13 @@ export class UserViewComponent implements OnInit {
         this.user = response.user;
       }
     );
+  }
+
+  deleteUser(id: string): void {
+    if(confirm("Are you sure to delete " + this.user.username)) {
+      this.userService.deleteUser(id).subscribe(
+        ()=>{this.router.navigate(['/users'])}
+      );
+    }
   }
 }

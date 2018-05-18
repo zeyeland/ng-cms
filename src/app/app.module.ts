@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import {UserService} from './user.service';
@@ -18,7 +19,8 @@ import { UserCreateComponent } from './user-create/user-create.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     UserService

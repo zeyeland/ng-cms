@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import {UserService} from './user.service';
 import { AppRoutingModule } from './/app-routing.module';
+import { UserViewComponent } from './user-view/user-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent
+    UsersComponent,
+    UserViewComponent
   ],
   imports: [
     BrowserModule,
